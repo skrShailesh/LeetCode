@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class WordPattern290 {
     public static void main(String[] args) {
-        String pattern = "abba";
+        String pattern = "abbaa";
         String s = "dog cat cat dog";
         System.out.println(wordPattern(pattern, s));
     }

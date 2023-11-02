@@ -2,9 +2,11 @@ import java.util.HashMap;
 
 public class WordPattern290 {
     public static void main(String[] args) {
-        String pattern = "abbaa";
+        String pattern = "abba";
         String s = "dog cat cat dog";
         System.out.println(wordPattern(pattern, s));
+        System.out.println("s = " + s);
+        System.out.println("pattern = " + pattern);
     }
 
     public static boolean wordPattern(String pattern, String s) {

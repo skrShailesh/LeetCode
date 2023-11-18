@@ -1,6 +1,6 @@
 public class AddDigits258 {
     public static void main(String[] args) {
-        int num = 38;
+        int num = 48;
         System.out.println(addDigits(num));
     }
 

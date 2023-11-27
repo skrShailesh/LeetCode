@@ -1,6 +1,6 @@
 public class Valid_Anagram_242 {
     public static void main(String[] args) {
-        String s = "anagram", t = "nagaram";
+        String s = "anagram", t = "agaram";
         System.out.println(isAnagram(s, t));
     }
 

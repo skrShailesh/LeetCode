@@ -1,9 +1,10 @@
 public class Valid_Anagram_242 {
     public static void main(String[] args) {
-        s = "anagram", t = "nagaram";
+        String s = "anagram", t = "nagaram";
+        System.out.println(isAnagram(s, t));
     }
 
-    public boolean isAnagram(String s, String t) {
+    public static boolean isAnagram(String s, String t) {
 
         int m = s.length();
         int n = t.length();

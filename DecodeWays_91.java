@@ -1,4 +1,11 @@
+/*
 public class DecodeWays_91 {
+    public static void main(String[] args) {
+        DecodeWays_91 check= new DecodeWays_91();
+        System.out.println(check.numDecodings("12"));
+        System.out.println(check.numDecodings("226"));
+        System.out.println(check.numDecodings("06"));
+    }
     public int numDecodings(String s) {
         int[] table = new int[s.length()];
 
@@ -12,5 +19,40 @@ public class DecodeWays_91 {
             if (second >= 10 && second <= 26) table[i] = table[i - 2];
         }
         return table[table.length - 1];
+    }
+}
+*/
+public class DecodeWays_91 {
+    public static void main(String[] args) {
+        DecodeWays_91 check = new DecodeWays_91();
+        System.out.println(check.numDecodings("12"));
+        System.out.println(check.numDecodings("226"));
+        System.out.println(check.numDecodings("06"));
+    }
+
+    public int numDecodings(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        int[] table = new int[s.length() + 1];
+
+        table[0] = 1;
+        table[1] = s.charAt(0) == '0' ? 0 : 1;
+
+        for (int i = 2; i <= s.length(); i++) {
+            int oneDigit = Integer.valueOf(s.substring(i - 1, i));
+            int twoDigits = Integer.valueOf(s.substring(i - 2, i));
+
+            if (oneDigit >= 1 && oneDigit <= 9) {
+                table[i] += table[i - 1];
+            }
+
+            if (twoDigits >= 10 && twoDigits <= 26) {
+                table[i] += table[i - 2];
+            }
+        }
+
+        return table[s.length()];
     }
 }
